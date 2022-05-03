@@ -1,0 +1,10 @@
+<h1>Demander un RDV</h1>
+<form novalidate [formGroup]="DemandeForm" (ngSubmit)="Create()">
+  <p>
+ <input matInput formControlName="title" placeholder="description du visite" type="comment">
+
+      <input matInput formControlName="date" placeholder="date de l'annonce" type="date">
+</p>
+ <button type="submit" mat-button class="background-primary text-floral-white">Envoyer</button>
+</form>
+<p>{{ visite | json}}</p>

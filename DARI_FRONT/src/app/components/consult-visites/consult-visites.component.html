@@ -1,0 +1,15 @@
+<h1>Your visits is waiting</h1>
+<table class="table">
+  <thead style="background-color: rgb(192, 183, 183);">
+      <th>sujet de visite</th>
+      <th>date</th>
+
+  </thead>
+  <tbody>
+      <tr *ngFor='let vi of vis'>
+          <td>{{vi.title}}</td>
+          <td>{{vi.dateVisite}}</td>
+        </tbody>
+</table>
+
+
