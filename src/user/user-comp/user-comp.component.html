@@ -1,0 +1,93 @@
+
+  <app-admin></app-admin>
+  <br />
+  <a href="http://localhost:4200/adduser" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Add User</a>
+
+  <table class="table table-striped">
+    <thead class="black white-text">
+      <tr>
+        <th hidden>id</th>
+        <th>username</th>
+        <th>email</th>
+        <th> Password</th>
+        <th>role</th>
+        <th>numero</th>
+        <th>enabled</th>
+        <th>locked</th>
+        <th class="bg-info">Actions</th>
+
+
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of listUser">
+        <td hidden>{{user.id}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.password}}</td>
+        <td>{{user.role}}</td>
+        <td>{{user.num}}</td>
+        <td>{{user.enabled}}</td>
+        <td>{{user.locked}}</td>
+        <td>
+
+          <button type="button" class="btn btn-outline-danger"
+                  (click)="connfirmeMessage(user.id)">
+            delete
+          </button>
+        <td>
+          <button type="button" class="btn btn-outline-primary"
+                  (click)="open(mymodal)">
+            edit
+          </button>
+          <ng-template #mymodal let-modal>
+            <div class="modal-header">
+              <h4 class="modal-title" id="modal-basic-title">Edit</h4>
+              <button type="button" class="close" aria-label="Close"
+                      (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true" (click)="cancel()">×</span>
+
+              </button>
+
+            </div>
+            <div>
+              <form>
+                <div class="modal-body">
+                  <input type="text" [(ngModel)]="user.id" hidden />
+
+                  <div class="row" class="col-md-5">
+                    <label>username</label>
+                    <input type="text" [(ngModel)]="user.username" [ngModelOptions]="{standalone : true}" />
+                  </div>
+                  <div class="row" class="col-md-5">
+                    <label>email</label>
+                    <input type="text" [(ngModel)]="user.email" [ngModelOptions]="{standalone : true}" />
+                  </div>
+
+                  <div class="row" class="col-md-5">
+                    <label>numero</label>
+                    <input type="number" [(ngModel)]="user.num" [ngModelOptions]="{standalone : true}" />
+                  </div>
+                </div>
+
+                <div class="modal-footer">
+
+                  <button type="button" class="btn btn-info"
+                          (click)="modal.close('Save click')" (click)="cancel()">
+                    Cancel
+                  </button>
+                  <button class="btn btn-success" (click)="edit(user)" (click)="modal.close('Save click')">Validate</button>
+                </div>
+              </form>
+            </div>
+          </ng-template>
+
+        </td>
+
+      </tr>
+
+    </tbody>
+  </table>
+
+

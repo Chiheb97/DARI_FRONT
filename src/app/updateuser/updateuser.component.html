@@ -1,0 +1,46 @@
+<h1> Edit User</h1>
+<form [formGroup]="userform" (ngSubmit)="submit()">
+  <div class="form-group">
+    <label> Username </label>
+
+    <input type="text" formControlName="username" size="15" /> <br> <br>
+
+  </div>
+  <div class="form-group">
+
+
+
+
+    <br>
+    <label>
+      Role :
+    </label><br>
+    <input type="radio" formControlName="role" value="Admin" /> Admin <br>
+    <input type="radio" formControlName="role" value="User" /> User <br>
+  </div>
+
+  <div class="form-group">
+
+    <label>
+      Phone :
+    </label>
+    <input type="text" formControlName="country code" value="+216" size="2" />
+    <input type="text" formControlName="num" size="10" /> <br> <br>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" formControlName="email" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+
+  Password:
+  <input type="Password" id="pass" formControlName="password"> <br>
+  <br> <br>
+  <input type="text" id="favoris" formControlName="favoris" value="" hidden> <br>
+  <input type="radio" id="enabled" formControlName="enabled" value=false hidden> <br>
+  <input type="radio" id="locked" formControlName="locked" value=false hidden> <br>
+
+  <button class="btn btn-success" (click)=submit()>Add</button>   <button class="btn btn-danger" type="reset" [disabled]="!userform.valid">
+    Cancel
+  </button>
+</form>

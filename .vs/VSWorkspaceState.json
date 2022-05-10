@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\admin",
+    "\\src\\app\\forgetpassword",
+    "\\src\\app\\forgetpassword\\resetpassword",
+    "\\src\\assets",
+    "\\src\\user",
+    "\\src\\user\\adduser",
+    "\\src\\user\\user-comp"
+  ],
+  "SelectedNode": "\\src\\user\\user-comp\\user-comp.component.html",
+  "PreviewInSolutionExplorer": false
+}

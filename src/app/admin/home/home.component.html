@@ -1,0 +1,36 @@
+<div *ngIf="Login==true"> 
+
+
+
+  <nav class="navbar navbar-dark bg-dark">
+
+    <a class="navbar-brand" href="#">Admin Dashboard</a>
+    <a class="navbar-brand">  {{user.username}} </a>
+
+
+
+    <li class="nav-item" *ngIf="Login==true">
+      <a class="nav-link btn btn-default d-none d-lg-block"
+         href="javascript:void(0)"
+         (click)="logout()">
+        Logout
+      </a>
+    </li>
+
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="#">User <span>(current)</span></a>
+        <a class="nav-item nav-link" href="#">location </a>
+        <a class="nav-item nav-link" href="#">reclamation</a>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<div *ngIf="Login==false">
+  Please 
+  <a href="http://localhost:4200/login"> Login </a>
+
+</div>
+

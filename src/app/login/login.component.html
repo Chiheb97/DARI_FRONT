@@ -1,0 +1,108 @@
+
+<section class="vh-150 bg-image"
+         style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+    <div class="mask d-flex align-items-center h-60 w-70 gradient-custom-5">
+    <div class="container h-80">
+      <div class="row d-flex justify-content-center align-items-center h-80">
+        <div class="col-8 col-md-9 col-lg-7 col-xl-6">
+
+          <div class="card" style="border-radius: 15px;">
+            <div>
+              <a href="http://localhost:4200/home">
+                <button type="button" class="btn btn-success"><i class="bi bi-house"></i></button>
+              </a>
+            </div>
+
+            <div class="card-body p-5 ">
+
+              <h3 class="text-uppercase text-center mb-5">Login</h3>
+
+              <form class="form" [formGroup]="form" (submit)="submit()">
+
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example1cg">Email</label>
+
+                  <input formControlName="email"
+                         type="text" class="form-control form-control-lg" />
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <small style="color: #fe5d93;" *ngIf="form.get('email').invalid && form.get('email').touched">
+                        Please enter a valid Email
+                      </small>
+                    </div>
+                  </div>
+
+
+                </div>
+
+
+
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example4cg">Password</label>
+                  <div class="form-row">
+
+
+                    <input formControlName="password"
+                           type="password" id="form3Example4cg" class="form-control form-control-lg" />
+                    <div class="form-group col-md-6">
+                      <small style="color: #fe5d93;" *ngIf="form.get('password').invalid && form.get('password').touched">
+                        Please enter a valid Password
+                      </small>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <re-captcha (resolved)="resolved($event)" siteKey="6Le1pLYfAAAAAIhKAhdL0RSzzIdQKinI0RNBrRH3"></re-captcha>
+                </div>
+
+
+
+
+
+
+                <button [disabled]="!form.valid || !captcha" class="w-100 btn btn-lg btn-success" type="submit">Login</button>
+                <alert [hidden]="!error">
+                  Something went wrong! please try again
+                </alert>
+
+
+                <div class="text-center text-muted mt-5 mb-0">
+                  Not yet member ?  <a href="http://localhost:4200/register"
+                                       class="fw-bold text-body"><u>Sign Up  </u></a>
+                  <br />
+
+                  <div style="margin-top: 10px;margin-bottom: 10px;">
+                    <label class="form-check-label">
+                      <a [routerLink]="['/forgetpassword']"> FORGOT PASSWORD  ? </a>
+                    </label>
+                  </div>
+                  <a href="http://localhost:8084/SpringMVC/oauth2/authorization/facebook"> <img class="img-responsive" src="assets/fb.png" /> </a>
+
+
+                  <br />
+                  <a href="http://localhost:8084/SpringMVC/oauth2/authorization/google">  <img class="img-responsive" src="assets/ggl.png" /></a>
+
+                </div>
+
+              </form>
+
+            </div>
+          </div>    
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+

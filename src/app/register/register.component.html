@@ -1,0 +1,84 @@
+
+<section class="vh-100 bg-image"
+         style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+
+          <div class="card" style="border-radius: 15px;">
+            <div>
+              <button type="button" class="btn btn-success"><i class="bi bi-house"></i></button>
+
+            </div>
+
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+              <h6 class="text-uppercase text-center mb-5">  And let us bring You Home !</h6>
+
+              <form class="well form-horizontal" [formGroup]="userform" (ngSubmit)="submit()">
+                <div class="form-group">
+
+                  <input type="text" class="form-control" formControlName="username" placeholder="Username" size="15" required />
+                  <div class="form-group col-md-6">
+                    <small style="color: #fe5d93;" *ngIf="userform.get('username').invalid && userform.get('username').touched">
+                      Invalid username
+                    </small>
+                  </div>
+
+                </div>
+                <div class="form-group" hidden>
+                  <label>
+                    Role :
+                  </label>
+                  <input type="radio" class="form-control" formControlName="role" value="Admin" /> Admin
+                  <input type="radio" class="form-control" formControlName="role" value="User" /> User
+                </div>
+                
+                <div class="form-group">
+
+
+                  <br />
+
+                  <label size="1"> +216 </label>  <input type="text" class="form-control" formControlName="num" size="10" placeholder="Number" required />  <br>
+                </div>
+                <div class="form-group">
+
+                  <input required type="email" class="form-control" id="email" aria-describedby="emailHelp" formControlName="email" placeholder="Enter email">
+                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <small style="color: #fe5d93;" *ngIf="userform.get('email').invalid && userform.get('email').touched">
+                      Please enter a valid email
+                    </small>
+                  </div>
+                </div>
+                <br />
+                <input type="Password" class="form-control" placeholder="Password" id="pass" formControlName="password" required> <br>
+
+
+                <input type="text" id="favoris" formControlName="favoris" value="" hidden>
+                <input type="radio" id="enabled" formControlName="enabled" value=false hidden>
+                <input type="radio" id="locked" formControlName="locked" value=false hidden>
+
+                <div>
+                  <re-captcha (resolved)="resolved($event)" siteKey="6Le1pLYfAAAAAIhKAhdL0RSzzIdQKinI0RNBrRH3"></re-captcha>
+                </div>
+                <br />
+                <button style="margin-left:40%" class="btn btn-success" [disabled]="!userform.valid || !captcha" (click)=submit()>Register</button>   <button class="btn btn-danger" style="margin-right:40" type="reset">
+                  Cancel
+                </button>
+              </form>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
