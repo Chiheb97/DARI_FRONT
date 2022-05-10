@@ -1,0 +1,104 @@
+
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Price</th>
+            <th scope="col">Delete</th>
+            <th scope="col">edit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let a of listabonnement">
+            <th scope="row">{{a.name}}</th>
+            <th scope="row">{{a.description}}</th>
+            <th scope="row">{{a.prix}}</th>
+            <th scope="row" (click)="deleteabonnement(a.id)"><i class="bi bi-trash"></i></th>
+            <th scope="row"  (click)="open(mymodal)"><i class="bi bi-pen"></i>       
+            </th>
+            <ng-template #mymodal let-modal>
+                <div class="modal-header">
+                    <h4 class="modal-title" id="modal-basic-title">Edit</h4>
+                    <button type="button" class="close" aria-label="Close"
+                        (click)="modal.dismiss('Cross click')">
+                        <span aria-hidden="true" (click)="cancel()">×</span>
+      
+                    </button>
+      
+                </div>
+                <div>
+                <form>
+                    <div class="modal-body">
+                      <input type="text" hidden [(ngModel)]="a.id" />
+      
+                        <div class="row" class="col-md-5">
+                            <label>Nom</label>
+                            <input type="text" [(ngModel)]="a.name" [ngModelOptions]="{standalone : true}" />
+                        </div>
+                        <div class="row" class="col-md-5">
+                            <label>Description</label>
+                            <input type="text" [(ngModel)]="a.description" [ngModelOptions]="{standalone : true}" />
+                        </div>
+                        <div class="row" class="col-md-5">
+                            <label>Prix</label>
+                            <input type="number" [(ngModel)]="a.prix" [ngModelOptions]="{standalone : true}" />
+                        </div>
+                    
+                    </div>
+      
+                    <div class="modal-footer">
+      
+                        <button type="button" class="btn btn-danger"
+                            (click)="modal.close('Save click')" (click)="cancel()">Cancel</button>
+                        <button class="btn btn-success"(click)="editabonnement(a)" (click)="modal.close('Save click')">Validate</button>
+                    </div>
+                </form>
+            </div>
+            </ng-template>
+          </tr>
+         
+        </tbody>
+
+
+
+    
+      </table>
+      <button class="btn btn-round btn-sm btn-success" style="margin-left:600px"(click)="open(mymodal1)">ajouter </button>
+      <ng-template #mymodal1 let-modal1>
+        <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title" >Ajouter</h4>
+            <button type="button" class="close" aria-label="Close" (click)="modal1.dismiss('Cross click')">
+                <span aria-hidden="true" (click)="cancel()">×</span>
+            </button>
+
+        </div>
+        <div class="center">
+        <form>
+            <div class="modal-body">
+            <div class="row" class="col-md-5">
+                <label>Nom</label>
+                <input type="text" placeholder=" Nom" [(ngModel)]="abonnement.name"
+                    [ngModelOptions]="{standalone : true}">
+            </div>
+            <div class="row" class="col-md-5">
+                <label>Description</label>
+                <input type="text" placeholder="description" [(ngModel)]="abonnement.description"
+                    [ngModelOptions]="{standalone : true}">
+            </div>
+            <div class="row" class="col-md-5">
+                <label>Prix</label>
+                <input type="number" placeholder="prix" [(ngModel)]="abonnement.prix"
+                    [ngModelOptions]="{standalone : true}">
+            </div>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-success" (click)="addabonnement(abonnement)" (click)="modal1.close('Save click')">Add</button> 
+            <button type="button" class="btn btn-danger" (click)="modal1.close('Save click')" >Cancel</button>
+            </div>
+        </form>
+    </div>
+    </ng-template>
+    </div>

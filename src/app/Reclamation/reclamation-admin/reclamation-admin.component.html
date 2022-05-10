@@ -1,0 +1,24 @@
+
+<div class="container">
+<table class="table">
+    <thead>
+      <tr>
+        
+        <th scope="col">Subject</th>
+        <th scope="col">Description</th>
+        <th scope="col">claimed by</th>
+        <th scope="col">delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let r of listreclam">
+        <th scope="row">{{r.titre}}</th>
+        <th scope="row">{{r.description}}</th>
+        <th scope="row">{{r.user.username}}</th>
+        <th scope="row" (click)="deletereclamation(r.id)"><i class="bi bi-trash"></i></th>
+      </tr>
+     
+    </tbody>
+
+  </table>
+</div>
