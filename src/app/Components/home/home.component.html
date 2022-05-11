@@ -1,1 +1,273 @@
-<p>home works!</p>
+ <!-- Search Section Begin -->
+ <section class="search-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="section-title">
+                    <h4>Where would you rather live?</h4>
+                </div>
+            </div>
+        </div>
+        <div class="search-form-content">
+            <form action="#" class="filter-form">
+                  
+                <select class="sm-width" style="display: none;" id="regionId" name="localisation" >
+                            </select>
+               <div class="nice-select sm-width" tabindex="0"><span class="current">Chose The City</span><ul class="list">
+                            
+                <option class="option selected">Chose The City</option>         
+                <option value="Ariana">Ariana</option>
+                <option value="Ben Arous">Ben Arous</option>
+                <option value="Bizerte">Bizerte</option>
+                <option value="Béja">Béja</option>
+                <option value="Djerba">Djerba</option>
+                <option value="El Kasserine">El Kasserine</option>
+                <option value="Gabès">Gabès</option>
+                <option value="Gafsa">Gafsa</option>
+                <option value="Jendouba">Jendouba</option>
+                <option value="Kairouan">Kairouan</option>
+                <option value="Kébili">Kébili</option>
+                <option value="La Manouba">La Manouba</option>
+                <option value="Le Kef">Le Kef</option>
+                <option value="Mahdia">Mahdia</option>
+                <option value="Medenine">Medenine</option>
+                <option value="Monastir">Monastir</option>
+                <option value="Nabeul">Nabeul</option>
+                <option value="Sfax">Sfax</option>
+                <option value="Sidi Bouzid">Sidi Bouzid</option>
+                <option value="Siliana">Siliana</option>
+                <option value="Sousse">Sousse</option>
+                <option value="Tataouine">Tataouine</option>
+                <option value="Tozeur">Tozeur</option>
+                <option value="Tunis">Tunis</option>
+                <option value="Zaghouan">Zaghouan</option>
+                  
+               </ul></div>
+                                   
+                           
+                                     
+                                   <div class="nice-select sm-width" tabindex="0"><span class="current">Transaction</span><ul class="list"> <option *ngFor="let tr of transactions | keyvalue" [ngValue]="tr.key" >
+                                    <label >{{ tr['value']}}</label>                        
+                                </option></ul></div>
+                                   <select class="sm-width" style="display: none;">
+                                       <option value="">Property Type</option>
+                                   </select><div class="nice-select sm-width" tabindex="0"><span class="current">Property Type</span><ul class="list"><li data-value="" class="option selected">Property Type</li></ul></div>
+                                   <select class="sm-width" style="display: none;">
+                                       <option value="">No Of Bedrooms</option>
+                                   </select><div class="nice-select sm-width" tabindex="0"><span class="current">No Of Bedrooms</span><ul class="list"><li data-value="" class="option selected">No Of Bedrooms</li></ul></div>
+                                   <select class="sm-width" style="display: none;">
+                                       <option value="">No Of Bathrooms</option>
+                                   </select><div class="nice-select sm-width" tabindex="0"><input class="sm-width form-control col-sm-2" type="text" #keyword placeholder="keyword" name="keyword"
+                                   ({ngModel})="keyword"></div>
+                                   
+                                   <div class="row col-lg-12"  >
+                                   <div class="room-size-range-wrap sm-width" >
+                                    <div class="price-text">
+                                        <label for="roomsizeRange">Size:</label>
+                                    </div>
+                                    <div class="custom-slider" style="padding-right: 10%; padding-left: 5%; ">
+
+                                            <ngx-slider [(value)]="value1"  [options]="options1" ></ngx-slider>  
+                                   </div> </div>
+                                
+                                
+                                   <div class="price-range-wrap sm-width">
+                                    <div class="price-text">
+                                        <label for="priceRange">Price:</label>
+                                    </div>
+                                    <div class="custom-slider"  style="padding-right: 10%; padding-left: 5%; ">
+
+                                        <ngx-slider [(value)]="value2"  [options]="options2" ></ngx-slider>  
+                                    
+                                    </div>
+                                </div>
+                                </div>      
+                                <br>
+                                       
+                                    <button type="button" class="search-btn sm-width" (click)="fetchAnnonceList(keyword.value)"  (click)="range(value2)">Search</button>
+                               </form>
+        </div>
+        <div class="more-option">
+            <div class="accordion" id="accordionExample">
+                <div class="card">
+                    <div class="card-heading active">
+                        <a data-toggle="collapse" data-target="#collapseOne">
+                            More Search Options
+                        </a>
+                    </div>
+                    <div id="collapseOne" class="collapse" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div class="mo-list">
+                                <div class="ml-column">
+                                    <label for="air">Air conditioning
+                                        <input type="checkbox" id="air">
+                                        <span class="checkbox"></span>
+                                    </label>
+                                    <label for="lundry">Laundry
+                                        <input type="checkbox" id="lundry">
+                                        <span class="checkbox"></span>
+                                    </label>
+                                    <label for="refrigerator">Refrigerator
+                                        <input type="checkbox" id="refrigerator">
+                                        <span class="checkbox"></span>
+                                    </label>
+                                    <label for="washer">Washer
+                                        <input type="checkbox" id="washer">
+                                        <span class="checkbox"></span>
+                                    </label>
+                                </div>
+                                <div class="ml-column">
+                                    <label for="barbeque">Barbeque
+                                        <input type="checkbox" id="barbeque">
+                                        <span class="checkbox"></span>
+                                    </label>
+                                    <label for="lawn">Lawn
+                                        <input type="checkbox" id="lawn">
+                                        <span class="checkbox"></span>
+                                    </label>
+                                    <label for="sauna">Sauna
+                                        <input type="checkbox" id="sauna">
+                                        <span class="checkbox"></span>
+                                    </label>
+                                    <label for="wifi">Wifi
+                                        <input type="checkbox" id="wifi">
+                                        <span class="checkbox"></span>
+                                    </label>
+                                </div>
+                                <div class="ml-column">
+                                    <label for="dryer">Dryer
+                                        <input type="checkbox" id="dryer">
+                                        <span class="checkbox"></span>
+                                    </label>
+                                    <label for="microwave">Microwave
+                                        <input type="checkbox" id="microwave">
+                                        <span class="checkbox"></span>
+                                    </label>
+                                    <label for="pool">Swimming Pool
+                                        <input type="checkbox" id="pool">
+                                        <span class="checkbox"></span>
+                                    </label>
+                                    <label for="window">Window Coverings
+                                        <input type="checkbox" id="window">
+                                        <span class="checkbox"></span>
+                                    </label>
+                                </div>
+                                <div class="ml-column last-column">
+                                    <label for="gym">Gym
+                                        <input type="checkbox" id="gym">
+                                        <span class="checkbox"></span>
+                                    </label>
+                                    <label for="shower">OutdoorShower
+                                        <input type="checkbox" id="shower">
+                                        <span class="checkbox"></span>
+                                    </label>
+                                    <label for="tv">Tv Cable
+                                        <input type="checkbox" id="tv">
+                                        <span class="checkbox"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Search Section End -->
+
+<!-- Property Section Begin -->
+<section class="property-section latest-property-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="section-title">
+                    <h4>Latest PROPERTY</h4>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="property-controls">
+                    <ul>
+                        <li data-filter="all">All</li>
+                        <li data-filter=".apart">Apartment</li>
+                        <li data-filter=".house">House</li>
+                        <li data-filter=".office">Office</li>
+                        <li data-filter=".hotel">Hotel</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row property-filter" >
+            <div class="col-lg-4 col-md-6 mix all house" *ngFor="let annonce of listannonces" >
+            <a 
+                 (click)="nombrevue(annonce)"> 
+                <div class="property-item" >
+                    <div class="pi-pic set-bg">
+                    <img  src="assets/img/property/property-1.jpg">
+                        <div class="label">{{annonce.transaction}}</div>
+                    </div>
+                    <div class="pi-text">
+                        <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
+                        <div class="pt-price">{{annonce.prix}}</div>
+                        <h5><a  >{{annonce.titre}}</a></h5>
+                        <p><span class="icon_pin_alt"></span>{{annonce.localisation}}</p>
+                        <ul>
+                            <li><i class="fa fa-object-group"></i>{{annonce.superficie}}</li>
+                            <li><i class="fa fa-bed"></i> {{annonce.nbrchambre}}</li>
+                            <li><i class="fa fa-calendar"></i> {{annonce.age}}</li>
+                            <li><i class="fa fa fa-eye"></i> {{annonce.nbrvue}}</li>
+                        </ul>
+                        <div class="pi-agent">
+                            <div class="pa-item">
+                                <div class="pa-info">
+                                    <img src="assets/img/property/posted-by/pb-1.jpg" alt="">
+                                    <h6>Ashton Kutcher</h6>
+                                </div>
+                                <div class="pa-text">
+                                    123-455-688
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </a> 
+            </div>
+       </div>
+    </div>
+</section>
+<!-- Property Section End -->
+
+<script>
+    
+    /*-------------------
+		Range Wrap
+	--------------------- */
+
+    //room size
+    $("#roomsize-range").slider({
+        range: true,
+        min: 0,
+        max: 2100,
+        step: 300,
+        values: [300, 1200],
+        slide: function (event, ui) {
+            $("#roomsizeRange").val("[" + ui.values[0] + "-" + ui.values[1] + "]" + "sqft");
+        }
+    });
+    $("#roomsizeRange").val("[" + $("#roomsize-range").slider("values", 0) + "-" + $("#roomsize-range").slider("values", 1) + "]" + "sqft");
+
+    //price range
+    $("#price-range").slider({
+        range: true,
+        min: 0,
+        max: 1500,
+        step: 100,
+        values: [100, 1000],
+        slide: function (event, ui) {
+            $("#priceRange").val("[ " + ui.values[0] + " - " + ui.values[1] + " ]" + " $");
+        }
+    });
+    $("#priceRange").val("[ " + $("#price-range").slider("values", 0) + " - " + $("#price-range").slider("values", 1) + " ]" + " $");
+
+    </script>
+    

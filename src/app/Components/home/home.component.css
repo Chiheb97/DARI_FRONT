@@ -1,0 +1,244 @@
+.search-form-content .filter-form {
+    margin-right: 0;
+  }
+
+  .search-form-content .filter-form .sm-width {
+    width: 100%;
+    margin-bottom: 20px;
+    margin-right: 0 !important;
+  }
+  .search-form-content {
+    overflow: hidden;
+    margin-bottom: 26px;
+  }
+  .search-form-content .filter-form {
+    margin-right: -20px;
+  }
+  .search-form-content .filter-form .sm-width {
+    width: calc(33.33% - 20px);
+  }
+  .search-form-content .filter-form .nice-select {
+    clear: none;
+    margin-right: 20px;
+    height: 46px;
+    background: #ffffff;
+    border-radius: 0;
+    border: 1px solid #e1e1e1;
+    line-height: 43px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    width: 30;
+
+   
+  }
+  .search-form-content .filter-form .nice-input {
+    clear: none;
+    margin-right: 20px;
+    height: 46px;
+    background: #ffffff;
+    border-radius: 0;
+    border: 1px solid #e1e1e1;
+    line-height: 43px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    width: 30;
+
+   
+  }
+  .search-form-content .filter-form .nice-input:after {
+    border-bottom: 1px solid #666666;
+    border-right: 1px solid #666666;
+    height: 6px;
+    right: 16px;
+    margin-top: -6px;
+    width: 6px;
+    top: 54%;
+  }
+  .search-form-content .filter-form .nice-select:after {
+    border-bottom: 1px solid #666666;
+    border-right: 1px solid #666666;
+    height: 6px;
+    right: 16px;
+    margin-top: -6px;
+    width: 6px;
+    top: 54%;
+  }
+  .search-form-content .filter-form .nice-select span {
+    font-size: 13px;
+    color: #666666;
+    font-weight: 500;
+  }
+  .search-form-content .filter-form .nice-select.open .list {
+    opacity: 1;
+    pointer-events: auto;
+    -webkit-transform: scale(1) translateY(0);
+    -ms-transform: scale(1) translateY(0);
+    transform: scale(1) translateY(0);
+    width: 100%;
+    border-radius: 0;
+    margin-top: 0;
+  }
+  .search-form-content .filter-form .price-range-wrap {
+    float: left;
+    margin-right: 20px;
+    
+  }
+  .search-form-content .filter-form .price-range-wrap .price-text {
+    margin-bottom: 9px;
+  }
+  .search-form-content .filter-form .price-range-wrap .price-text label {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 500;
+    color: #666666;
+    margin-bottom: 0;
+    text-transform: uppercase;
+  }
+  .search-form-content .filter-form .price-range-wrap .price-text input {
+    display: inline-block;
+    width: 165px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #666666;
+    border: none;
+    background: transparent;
+  }
+  .search-form-content .filter-form .room-size-range-wrap {
+    float: left;
+    margin-right: 20px;
+  }
+  .search-form-content .filter-form .room-size-range-wrap .price-text {
+    margin-bottom: 9px;
+  }
+  .search-form-content .filter-form .room-size-range-wrap .price-text label {
+    display: inline-block;
+    font-size: 13px;
+    color: #666666;
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+  .search-form-content .filter-form .room-size-range-wrap .price-text input {
+    display: inline-block;
+    width: 165px;
+    font-size: 13px;
+    color: #666666;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    background: transparent;
+  }
+  .search-form-content .filter-form .search-btn {
+    font-size: 14px;
+    height: 46px;
+    background: #00C89E;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  
+  .ui-widget.ui-widget-content {
+    background: #e1e1e1;
+    height: 7px;
+    border: none;
+  }
+  
+  .ui-slider .ui-slider-range {
+    background: #00C89E;
+  }
+  
+  .ui-slider-horizontal .ui-slider-handle {
+    width: 13px;
+    height: 13px;
+    background: #00C89E;
+    border-radius: 50%;
+    border: none;
+    margin-left: 0;
+    top: -3px;
+  }
+  
+  .more-option .card {
+    border: none;
+    border-radius: 0;
+    background: transparent;
+  }
+  .more-option .card .card-heading {
+    padding-left: 34px;
+  }
+  .more-option .card .card-heading a {
+    font-size: 16px;
+    color: #111111;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .more-option .card .card-body {
+    padding: 0;
+    padding-top: 30px;
+  }
+  .more-option .card .card-body .mo-list .ml-column {
+    width: 25%;
+    float: left;
+  }
+  .more-option .card .card-body .mo-list .ml-column label {
+    font-size: 14px;
+    color: #666666;
+    font-weight: 500;
+    position: relative;
+    padding-left: 26px;
+    cursor: pointer;
+    display: block;
+    margin-bottom: 20px;
+  }
+  .more-option .card .card-body .mo-list .ml-column label .checkbox {
+    position: absolute;
+    left: 0;
+    top: 4px;
+    width: 12px;
+    height: 12px;
+    border: 1px solid #174625;
+    border-radius: 2px;
+    content: "";
+  }
+  ::ng-deep .custom-slider .ngx-slider .ngx-slider-bar {
+    background: #52d5ae;
+    height: 2px;
+ }
+  ::ng-deep .custom-slider .ngx-slider .ngx-slider-selection {
+    background: rgb(78, 183, 118);
+ }
+  ::ng-deep .custom-slider .ngx-slider .ngx-slider-pointer {
+    width: 8px;
+    height: 16px;
+    top: auto;
+   /* to remove the default positioning */
+    bottom: 0;
+    background-color: rgb(59, 224, 172);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+ }
+  ::ng-deep .custom-slider .ngx-slider .ngx-slider-pointer:after {
+    display: none;
+ }
+  ::ng-deep .custom-slider .ngx-slider .ngx-slider-bubble {
+    bottom: 14px;
+ }
+  ::ng-deep .custom-slider .ngx-slider .ngx-slider-limit {
+    font-weight: bold;
+    color: rgb(42, 201, 151);
+ }
+  ::ng-deep .custom-slider .ngx-slider .ngx-slider-tick {
+    width: 1px;
+    height: 10px;
+    margin-left: 4px;
+    border-radius: 0;
+    background: #117c5a;
+    top: -1px;
+ }
+  ::ng-deep .custom-slider .ngx-slider .ngx-slider-tick.ngx-slider-selected {
+    background: rgb(26, 192, 123);
+ }
+ ::ng-deep .custom-slider .ngx-slider .ngx-slider-tick.ngx-slider-span {
+  background: rgb(26, 192, 123);
+}
+  

@@ -1,0 +1,200 @@
+
+    <!-- End Navbar -->
+    <div class="container-fluid py-4">
+      <div class="row">
+        <div class="col-12">
+          <div class="card mb-4">
+            <div class="card-header pb-0">
+              <h6>Proprites table</h6>
+            </div>
+            <div class="card-body px-0 pt-0 pb-2">
+              <div class="table-responsive p-0">
+                <table class="table align-items-center mb-0">
+                  <thead>
+                    <tr>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Title</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Location</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Views</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ">Visite</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action</th>
+
+                    </tr>
+                  </thead>
+                  <tbody *ngFor="let annonce of listannonces">
+                    <tr >
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">{{annonce.titre}}</h6>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <p class="text-xs font-weight-bold mb-0">{{annonce.localisation}}</p>
+                      </td>
+                      <td class="align-middle text-center text-sm">
+                        <span class="badge badge-sm bg-gradient-success">{{annonce.nbrvue}}</span>
+                      </td>
+                      <td class="align-middle text-center">
+                        <span class="text-secondary text-xs font-weight-bold">{{annonce.Visite}}</span>
+                      </td>
+                      <td>
+                        <button type="button" class="btn btn-outline-primary"
+                          (click)="open(mymodal)">
+                    edit
+                  </button>
+                  <ng-template class="signup-form" #mymodal let-modal>
+                    <div  class="form-header modal-header">
+                      <h3 class="modal-title" id="modal-basic-title">Edit Proprity</h3>
+                      <button type="button" class="close" aria-label="Close"
+                              (click)="modal.dismiss('Cross click')">
+                        <span aria-hidden="true" (click)="cancel()">×</span>
+
+                      </button>
+                    </div>
+                    <div>
+                  <form #editForm="ngForm" >
+                       
+                   <!-- form body -->
+                  <div class="form-body">
+                       
+
+                        <div class="horizontal-group " style="columns: 3;">
+
+                            <label for="transaction" class="label-title">Transaction : </label>
+                            <select class="form-input" id="transaction" name="transaction" [(ngModel)]="annonce.transaction"  >
+                            <option selected>{{annonce.transaction}}</option>
+                            <option *ngFor="let tr of transactions | keyvalue" [ngValue]="tr.key" >
+                                <label >{{ tr['value']}}</label>                        
+                            </option>
+                            </select>
+                        
+                            <label for="typedebien" class="label-title">Typedebien : </label>
+                            <select class="form-input" id="typedebien" name="typedebien" [(ngModel)]="annonce.typedebien"  >
+                            <option selected>{{annonce.typedebien}}</option>
+                            <option *ngFor="let tb of typedebiens | keyvalue" [ngValue]="tb.key" >
+                                <label >{{ tb['value']}}</label>                        
+                            </option>
+                            </select>
+                        
+                            <label  class="label-title" >Etat : </label>
+                            <select class="form-input" id="etat" name="etat"  [(ngModel)]="annonce.etat"  >
+                            <option selected >{{annonce.etat}}</option>
+                            <option *ngFor="let etat of etats | keyvalue" [ngValue]="etat.key" >
+                                <label>{{ etat['value']}}</label>                        
+                            </option>
+                            </select>
+                        </div>
+                        
+                            <div class="form-group">
+                                <label class="label-title">Title</label>
+                                <input type="text" 
+                                  class="form-input" placeholder="Title"  name="titre" [(ngModel)]="annonce.titre" required>
+                            </div>
+
+                   <div class="horizontal-group " style="columns: 3;">
+                                <!-- Room -->
+                        <div class="form-group">
+                            <label  class="label-title">Room <i class="fa fa-bed"></i></label>
+                            <input  name="nbrchambre"  [(ngModel)]="annonce.nbrchambre"   class="form-input" type="number" value="1" >
+
+                        </div>
+                        <!-- etage -->
+                        <div class="form-group">
+                            <label  class="label-title">etage</label>
+                            <input type="number" class="form-input" name="etage" [(ngModel)]="annonce.etage"  >
+                        </div>
+                        <!-- superficie -->
+                        
+                        <div class="form-group">
+                            <label class="label-title">superficie</label>
+                            <input class="form-input"  name="superficie" [(ngModel)]="annonce.superficie" type="number" >
+                        </div>
+                 </div>
+
+
+
+                 <div class="form-group">
+                    <label  class="label-title">Price</label>
+                    <input type="number" class="form-input" name="prix" placeholder="Le Prix" [(ngModel)]="annonce.prix">
+                    </div>
+                    
+                
+                    <div class="form-group">
+
+                        <label class="label-title" >City</label>
+                        <select class="form-control" id="regionId" name="localisation"  [(ngModel)]="annonce.localisation">
+                          <option selected>{{annonce.localisation}}</option>
+                          <option value="Ariana">Ariana</option>
+                          <option value="Ben Arous">Ben Arous</option>
+                          <option value="Bizerte">Bizerte</option>
+                          <option value="Béja">Béja</option>
+                          <option value="Djerba">Djerba</option>
+                          <option value="El Kasserine">El Kasserine</option>
+                          <option value="Gabès">Gabès</option>
+                          <option value="Gafsa">Gafsa</option>
+                          <option value="Jendouba">Jendouba</option>
+                          <option value="Kairouan">Kairouan</option>
+                          <option value="Kébili">Kébili</option>
+                          <option value="La Manouba">La Manouba</option>
+                          <option value="Le Kef">Le Kef</option>
+                          <option value="Mahdia">Mahdia</option>
+                          <option value="Medenine">Medenine</option>
+                          <option value="Monastir">Monastir</option>
+                          <option value="Nabeul">Nabeul</option>
+                          <option value="Sfax">Sfax</option>
+                          <option value="Sidi Bouzid">Sidi Bouzid</option>
+                          <option value="Siliana">Siliana</option>
+                          <option value="Sousse">Sousse</option>
+                          <option value="Tataouine">Tataouine</option>
+                          <option value="Tozeur">Tozeur</option>
+                          <option value="Tunis">Tunis</option>
+                          <option value="Zaghouan">Zaghouan</option>
+                      </select>
+                      </div>
+
+
+
+
+                    <!-- Bio -->
+                    <div class="form-group">
+                        <label  class="label-title">Description</label>
+                        <textarea class="form-input" rows="4" cols="50" style="height: auto;"type="text" placeholder="descirption" [(ngModel)]="annonce.description"
+                        name="description"></textarea>
+                    </div>
+                   </div>
+
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-info"
+                                  (click)="modal.close('Save click')" (click)="cancel()">
+                            Cancel
+                          </button>
+                          <button class="btn btn-success" (click)="updateAnnonces(annonce)" (click)="showMessage()"(click)="modal.close('Save click')">Validate</button>
+                        </div>
+                      </form>
+                    </div>
+                  </ng-template>
+                  <button type="button" class="btn btn-outline-danger"
+                           (click)="connfirmeMessage(annonce.id)" >
+                    delete
+                  </button>
+
+                    </td>
+     
+                        
+                    
+                    </tr>
+                    
+                   
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     
+     
+    </div>
+   

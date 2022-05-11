@@ -1,0 +1,221 @@
+<section class="section back"  >
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+              <div class="section-heading">
+                <form  class="signup-form" [formGroup]="Form">
+                       <!-- form header -->
+                       <div class="form-header">
+                        <h1>Add Proprity</h1>
+                       </div>
+                   <!-- form body -->
+                  <div class="form-body">
+                       
+
+                    <div class="horizontal-group " style="columns: 3;">
+
+                        <label for="transaction" class="label-title" >Transaction : </label>
+                        <select class="form-input" id="transaction" name="transaction" formControlName="transaction"  >
+                        <option>Select one...</option>
+                        <option *ngFor="let tr of transactions | keyvalue" [ngValue]="tr.key" >
+                            <label >{{ tr['value']}}</label>                        
+                        </option>
+                        </select>
+                                                
+                        <div *ngIf="Form.get('transaction')?.invalid && Form.get('transaction')?.touched"
+                               class="alert alert-danger">
+
+                            <div *ngIf="Form.get('transaction')?.errors?.['required']">
+                            Transaction is required.
+                            </div>
+                           
+                        </div>
+                        <label for="typedebien" class="label-title">Typedebien : </label>
+                        <select formControlName="typedebien" class="form-input" id="typedebien" name="typedebien"   >
+                        <option selected>Select one...</option>
+                        <option *ngFor="let tb of typedebiens | keyvalue" [ngValue]="tb.key" >
+                            <label >{{ tb['value']}}</label>                        
+                        </option>
+                        </select>
+                        <div *ngIf="Form.get('typedebien')?.invalid && Form.get('typedebien')?.touched"
+                        class="alert alert-danger">
+
+                     <div *ngIf="Form.get('typedebien')?.errors?.['required']">
+                        Proprity Type  is required.
+                     </div>
+                    
+                 </div>
+                        <label  class="label-title" >Etat : </label>
+                        <select class="form-input" id="etat" name="etat"  formControlName="etat"  >
+                        <option selected >Select one...</option>
+                        <option *ngFor="let etat of etats | keyvalue" [ngValue]="etat.key" >
+                            <label>{{ etat['value']}}</label>                        
+                        </option>
+                        </select>
+                        <div *ngIf="Form.get('etat')?.invalid && Form.get('etat')?.touched"
+                        class="alert alert-danger">
+
+                     <div *ngIf="Form.get('etat')?.errors?.['required']">
+                       State is required.
+                     </div>
+                    
+                 </div>
+                    </div>
+                    
+                            <div class="form-group">
+                                <label class="label-title">Title </label>
+                                <input type="text" 
+                                  class="form-input form-control" placeholder="Title" id="titre" name="titre" formControlName="titre" required>
+                            
+                                                    
+                        <div *ngIf="Form.get('titre')?.invalid && Form.get('titre')?.touched"
+                               class="alert alert-danger">
+
+                            <div *ngIf="Form.get('titre')?.errors?.['required']">
+                              title is required.
+                            </div>
+                            <div *ngIf="Form.get('titre')?.errors?.['minlength']">
+                              title must be at least 4 characters long.
+                            </div>
+                           
+                        </div>
+                    </div>
+
+
+                   <div class="horizontal-group " style="columns: 3;">
+                                <!-- Room -->
+                        <div class="form-group">
+                            <label  class="label-title">Room <i class="fa fa-bed"></i></label>
+                            <input  name="nbrchambre"  formControlName="nbrchambre"   class="form-input" type="number" >
+
+                        <div *ngIf="Form.get('nbrchambre')?.invalid && Form.get('nbrchambre')?.touched"
+                        class="alert alert-danger">
+
+                     <div *ngIf="Form.get('nbrchambre')?.errors?.['required']">
+                       Room is required.
+                     </div>
+                    </div>
+
+                    
+                 </div>
+                        <!-- etage -->
+                        <div class="form-group">
+                            <label  class="label-title">etage</label>
+                            <input type="number" class="form-input" name="etage" formControlName="etage"  >
+                        
+                        <div *ngIf="Form.get('etage')?.invalid && Form.get('etage')?.touched"
+                        class="alert alert-danger">
+
+                     <div *ngIf="Form.get('etage')?.errors?.['required']">
+                      Floor is required.
+                     </div>
+                    </div>
+                    
+                 </div>
+                        <!-- superficie -->
+                        
+                        <div class="form-group">
+                            <label class="label-title">superficie</label>
+                            <input class="form-input"  name="superficie" formControlName="superficie" type="number" >
+                       
+                        <div *ngIf="Form.get('superficie')?.invalid && Form.get('superficie')?.touched"
+                        class="alert alert-danger">
+
+                     <div *ngIf="Form.get('superficie')?.errors?.['required']">
+                      Area is required.
+                     </div>
+                    </div>
+                    
+                 </div>
+                 </div>
+
+
+
+                 <div class="form-group">
+                    <label  class="label-title">Price</label>
+                    <input type="number" class="form-input" name="prix" placeholder="Le Prix" formControlName="prix">
+                   
+                    <div *ngIf="Form.get('prix')?.invalid && Form.get('prix')?.touched"
+                    class="alert alert-danger">
+
+                 <div *ngIf="Form.get('prix')?.errors?.['required']">
+                  Prix is required.
+                 </div>
+                </div>
+                
+             </div>
+                
+                    <div class="form-group">
+
+                        <label class="label-title" >City</label>
+                        <select class="form-control" id="regionId" name="localisation"  formControlName="localisation">
+                          <option>Sélectionnez</option>
+                          <option value="Ariana">Ariana</option>
+                          <option value="Ben Arous">Ben Arous</option>
+                          <option value="Bizerte">Bizerte</option>
+                          <option value="Béja">Béja</option>
+                          <option value="Djerba">Djerba</option>
+                          <option value="El Kasserine">El Kasserine</option>
+                          <option value="Gabès">Gabès</option>
+                          <option value="Gafsa">Gafsa</option>
+                          <option value="Jendouba">Jendouba</option>
+                          <option value="Kairouan">Kairouan</option>
+                          <option value="Kébili">Kébili</option>
+                          <option value="La Manouba">La Manouba</option>
+                          <option value="Le Kef">Le Kef</option>
+                          <option value="Mahdia">Mahdia</option>
+                          <option value="Medenine">Medenine</option>
+                          <option value="Monastir">Monastir</option>
+                          <option value="Nabeul">Nabeul</option>
+                          <option value="Sfax">Sfax</option>
+                          <option value="Sidi Bouzid">Sidi Bouzid</option>
+                          <option value="Siliana">Siliana</option>
+                          <option value="Sousse">Sousse</option>
+                          <option value="Tataouine">Tataouine</option>
+                          <option value="Tozeur">Tozeur</option>
+                          <option value="Tunis">Tunis</option>
+                          <option value="Zaghouan">Zaghouan</option>
+                      </select>
+                      </div>
+
+                      <div *ngIf="Form.get('localisation')?.invalid && Form.get('localisation')?.touched"
+                      class="alert alert-danger">
+
+                   <div *ngIf="Form.get('localisation')?.errors?.['required']">
+                    Location is required.
+                   </div>
+                  
+                  
+               </div>
+
+
+                    <!-- Bio -->
+                    <div class="form-group">
+                        <label  class="label-title">Description</label>
+                        <textarea class="form-input" rows="4" cols="50" style="height: auto;"type="text" placeholder="descirption" formControlName="description"
+                        name="description" required ></textarea>
+                       
+                    </div>
+                   
+                    <div *ngIf="Form.get('description')?.invalid && Form.get('description')?.touched"
+                    class="alert alert-danger">
+
+                 <div *ngIf="Form.get('description')?.errors?.['required']">
+                    Description is required.
+                 </div>
+                 </div>
+
+                    </div>
+                       <!-- form footer -->
+                       <div class="form-footer">
+                        <button type="button" class="btn btn-success"  (click)="onAdd()"  >Add</button>
+
+                        </div>   
+                  </form>
+            </div>
+          </div>
+    </div>
+</div>
+</section>
+
+

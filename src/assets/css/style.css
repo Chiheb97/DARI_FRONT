@@ -270,15 +270,13 @@ ol {
 .hs-top {
   border-bottom: 1px solid #ebebeb;
 }
-.hs-top .logo {
-  padding: 22px 0;
-}
+
 .hs-top .logo a {
   display: inline-block;
 }
 .hs-top .ht-widget {
   text-align: right;
-  padding: 20px 0;
+  padding: 30px 0px;
 }
 .hs-top .ht-widget ul {
   display: inline-block;
